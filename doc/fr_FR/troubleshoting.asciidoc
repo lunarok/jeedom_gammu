@@ -1,0 +1,5 @@
+[panel,danger]
+.Je n'ai pas de retour de SMS
+--
+Il faut bien avoir configurer le numéro pour autoriser les interactions
+--

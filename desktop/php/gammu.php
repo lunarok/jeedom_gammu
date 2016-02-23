@@ -24,7 +24,18 @@ $eqLogics = eqLogic::byType('gammu');
     </div>
 
     <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
-        <legend>{{Mes Gammu}}
+   <legend><i class="fa fa-cog"></i>  {{Gestion}}</legend>
+   <div class="eqLogicThumbnailContainer">
+     <div class="cursor eqLogicAction" data-action="gotoPluginConf" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
+     <center>
+       <i class="fa fa-wrench" style="font-size : 5em;color:#767676;"></i>
+     </center>
+     <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Configuration}}</center></span>
+   </div>
+ </div>
+
+
+        <legend><i class="fa fa-table"></i>  {{Mes Gammu}}
         </legend>
             <div class="eqLogicThumbnailContainer">
                       <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >

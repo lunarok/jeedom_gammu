@@ -26,7 +26,7 @@ if (init('apikey') != config::byKey('api') || config::byKey('api') == '') {
 
 $phone = init('phone');
 $text = init('text');
-$eqLogic = gammu::byId($phone);
+$eqLogic = eqLogic::byLogicalId($phone, 'gammu');
 if (!is_object($eqLogic)) {
 	echo json_encode(array('text' => __('Id inconnu : ', __FILE__) . init('id')));
 	die();

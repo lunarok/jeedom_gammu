@@ -133,7 +133,7 @@ class gammuCmd extends cmd {
 
 	public function execute($_options = array()) {
     $eqLogic = $this->getEqLogic();
-    $phone = $this->getConfiguration('phone');
+    $phone = $eqLogic->getConfiguration('phone');
     switch ($this->getType()) {
       case 'info' :
       return $this->getConfiguration('value');

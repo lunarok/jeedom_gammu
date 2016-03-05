@@ -87,7 +87,8 @@ class gammu extends eqLogic {
   }
 
   public function preSave() {
-    $this->setLogicalId($this->getConfiguration('phone'));
+    $id = str_replace('+','',$this->getConfiguration('phone'));
+    $this->setLogicalId($id);
   }
 
   public function postUpdate() {

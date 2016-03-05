@@ -12,7 +12,7 @@ FROM=$SMS_1_NUMBER
 LOG="/usr/share/nginx/www/jeedom/log/SMS.log"
 INPUT="/var/spool/gammu/inbox/"
 
-wget --no-check-certificate -qO- "#URL#&phone=$FROM&text=$MESSAGE"
+wget --no-check-certificate -qO- "#URL#&phone=${FROM//+}&text=$MESSAGE"
 echo `date`" JEEDOM SMS from "$FROM" : "$MESSAGE" file="$FILE" reponse="$REP >> $LOG
 rm $INPUT/$FILE
 exit 0

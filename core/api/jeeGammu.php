@@ -24,6 +24,8 @@ if (init('apikey') != config::byKey('api') || config::byKey('api') == '') {
 	die();
 }
 
+
+
 $phone = init('phone');
 $text = init('text');
 $eqLogic = eqLogic::byLogicalId($phone, 'gammu');
@@ -32,14 +34,11 @@ if (!is_object($eqLogic)) {
 	die();
 }
 
-$parameters = array();
-$username = $eqLogic->getConfiguration('user');
-$user = user::byLogin($username);
-if (is_object($user)) {
-	$parameters['profile'] = $username;
-}
+log::add('gammu', 'debug', 'recu : ' . $text . ' pour ' . $phone);
 
-$cmd = $this->getCmd(null, 'send');
+$parameters = array();
+
+$cmd = $eqLogic->getCmd(null, 'send');
 if ($cmd->getConfiguration('storeVariable', 'none') != 'none') {
 	$dataStore = new dataStore();
 	$dataStore->setType('scenario');
@@ -53,9 +52,8 @@ if ($cmd->getConfiguration('storeVariable', 'none') != 'none') {
 	die();
 }
 
-$cmd_text = $eqLogic->getCmd('info', 'text');
+$cmd_text = $eqLogic->getCmd(null, 'text');
 $cmd_text->event($text);
-$cmd_text->setValue($text);
 $cmd_text->setConfiguration('value',$text);
 $cmd_text->save();
 

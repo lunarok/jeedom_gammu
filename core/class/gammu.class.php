@@ -141,6 +141,7 @@ class gammuCmd extends cmd {
       break;
 
       case 'action' :
+      putenv('LANG=fr_FR.UTF-8');
       $cmd = 'sudo gammu-smsd-inject TEXT ' . $phone . ' -text "' . $_options['message'] . '"';
       log::add('gammu', 'debug', 'Envoi : ' . $cmd);
       exec($cmd);

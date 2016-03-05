@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # script executer par Gammu lors de la reception d'un SMS
 # variables d'environnement
 # SMS_1_CLASS='-1'

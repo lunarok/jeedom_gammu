@@ -37,6 +37,13 @@ if (!is_object($eqLogic)) {
 log::add('gammu', 'debug', 'recu : ' . $text . ' pour ' . $phone);
 
 $parameters = array();
+$username = $eqLogic->getConfiguration('user','none');
+if ($username != 'none') {
+	$user = user::byLogin($username);
+	if (is_object($user)) {
+		$parameters['profile'] = $username;
+	}
+}
 
 $cmd = $eqLogic->getCmd(null, 'send');
 if ($cmd->getConfiguration('storeVariable', 'none') != 'none') {
@@ -59,6 +66,7 @@ $cmd_text->save();
 
 if ($eqLogic->getConfiguration('interact') == 1) {
 	$reply = interactQuery::tryToReply($text, $parameters);
+	putenv('LANG=fr_FR.UTF-8');
 	exec('sudo gammu-smsd-inject TEXT ' . $phone . ' -text "' . $reply . '"');
 }
 

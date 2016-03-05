@@ -108,10 +108,17 @@ $eqLogics = eqLogic::byType('gammu');
          </div>
        </div>
 
+       <div class="form-group">
+       <label class="col-sm-2 control-label">{{Utilisateur}} :</label>
+        <div class="col-sm-3">
+          <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="user" placeholder="{{username}}"/>
+        </div>
+      </div>
+
       <div class="form-group">
       <label class="col-sm-2 control-label">{{Interactions}} :</label>
       <div class="col-sm-3">
-        <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="user">
+        <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="interact">
           <option value="0">{{Non}}</option>
           <option value="1">{{Oui}}</option>
         </select>

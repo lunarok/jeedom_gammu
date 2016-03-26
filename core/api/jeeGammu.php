@@ -67,7 +67,11 @@ $cmd_text->save();
 if ($eqLogic->getConfiguration('interact') == 1) {
 	$reply = interactQuery::tryToReply($text, $parameters);
 	putenv('LANG=fr_FR.UTF-8');
-	exec('sudo gammu-smsd-inject TEXT ' . $phone . ' -text "' . $reply . '"');
+	$reply = str_replace('/n','\n',$reply);
+  $len=strlen($reply);
+  $cmd='sudo bash -c'." '".'echo -e "'.$reply.'" | gammu-smsd-inject TEXT ' . $phone . ' -len '.$len." '";
+  log::add('gammu', 'debug', 'SMS send : ' . $cmd);
+  exec($cmd);
 }
 
 return true;

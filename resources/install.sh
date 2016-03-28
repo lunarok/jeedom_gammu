@@ -90,3 +90,5 @@ sed -i -e 's/#USB#/'${escaped}'/g' /etc/gammu-smsdrc
     escaped="${escaped//[$'\n']/}"
 
 sed -i -e 's/#PIN#/'${escaped}'/g' /etc/gammu-smsdrc
+
+service gammu-smsd restart

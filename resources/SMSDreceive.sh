@@ -9,7 +9,7 @@
 FILE=$1
 MESSAGE=$SMS_1_TEXT
 FROM=$SMS_1_NUMBER
-LOG="/usr/share/nginx/www/jeedom/log/SMS.log"
+LOG="#DIR#/../../../log/SMS.log"
 INPUT="/var/spool/gammu/inbox/"
 
 wget --no-check-certificate -qO- "#URL#&phone=${FROM//+}&text=$MESSAGE"

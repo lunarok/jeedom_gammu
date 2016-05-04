@@ -57,7 +57,12 @@ class gammu extends eqLogic {
   }
 
   public static function configuration() {
-    log::add('gammu', 'debug', 'Configuration gammu');
+    if (config::byKey('pin', 'gammu') == '' || config::byKey('nodeGateway', 'gammu') == '') {
+    	log::add('gammu', 'error', 'Configuration plugin non remplie, impossible de configurer gammu');
+    	die();
+    } else {
+    	log::add('gammu', 'debug', 'Configuration gammu');
+    }
     $install_path = dirname(__FILE__) . '/../../resources';
     if (!config::byKey('internalPort')) {
       $url = 'http://127.0.0.1' . config::byKey('internalComplement') . '/plugins/gammu/core/api/jeeGammu.php?apikey=' . config::byKey('api');

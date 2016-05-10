@@ -65,13 +65,13 @@ $cmd_text->setConfiguration('value',$text);
 $cmd_text->save();
 
 if ($eqLogic->getConfiguration('interact') == 1) {
-	$reply = interactQuery::tryToReply($text, $parameters);
-	putenv('LANG=fr_FR.UTF-8');
-	$reply = str_replace('/n','\n',$reply);
-  $len=strlen($reply);
-  $cmd='sudo bash -c'." '".'echo -e "'.$reply.'" | gammu-smsd-inject TEXT ' . $phone . ' -len '.$len." '";
-  log::add('gammu', 'debug', 'SMS send : ' . $cmd);
-  exec($cmd);
+ 	$reply = interactQuery::tryToReply($text, $parameters);
+	$len=strlen($reply);
+	$reply = str_replace('/n',PHP_EOL, $reply);
+	$reply = '"'.$reply.'"';
+	$cmd='sudo gammu-smsd-inject TEXT ' . $phone . ' -unicode -len ' .$len. ' -text '.$reply;
+  	log::add('gammu', 'debug', 'SMS send : ' . $cmd);
+  	exec($cmd);
 }
 
 return true;

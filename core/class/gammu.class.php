@@ -146,6 +146,7 @@ class gammuCmd extends cmd {
       break;
 
       case 'action' :
+      	putenv ( ' LANG=fr_FR.UTF-8 ' );
       $reply = $_options['message'];
       $len=strlen($reply);
       $reply = str_replace('/n',PHP_EOL, $reply);

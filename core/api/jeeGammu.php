@@ -65,6 +65,7 @@ $cmd_text->setConfiguration('value',$text);
 $cmd_text->save();
 
 if ($eqLogic->getConfiguration('interact') == 1) {
+	putenv ( ' LANG=fr_FR.UTF-8 ' );
  	$reply = interactQuery::tryToReply($text, $parameters);
 	$len=strlen($reply);
 	$reply = str_replace('/n',PHP_EOL, $reply);

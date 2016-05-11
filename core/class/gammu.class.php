@@ -76,7 +76,9 @@ class gammu extends eqLogic {
 
     $i = 1;
     foreach (eqLogic::byType('gammu', true) as $gammu) {
-      $line = 'number' . $i . ' = ' . $gammu->getConfiguration('phone');
+      $phone = $gammu->getConfiguration('phone');
+      if ($phone != '+') { $phone='+'.$phone; }
+      $line = 'number' . $i . ' = ' . $phone;
       $cmd = 'echo "' . $line . '" | sudo tee --append /etc/gammu-smsdrc';
       exec($cmd);
       $i++;
@@ -151,6 +153,7 @@ class gammuCmd extends cmd {
       $len=strlen($reply);
       $reply = str_replace('/n',PHP_EOL, $reply);
       $reply = '"'.$reply.'"';
+      if ($phone != '+') { $phone='+'.$phone; }
       $cmd='sudo gammu-smsd-inject TEXT ' . $phone . ' -unicode -len ' .$len. " -text ".$reply;
       log::add('gammu', 'debug', 'SMS send : ' . $cmd);
       exec($cmd);

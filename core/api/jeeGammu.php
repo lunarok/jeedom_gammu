@@ -27,6 +27,7 @@ if (init('apikey') != config::byKey('api') || config::byKey('api') == '') {
 
 
 $phone = init('phone');
+if ($phone[0] != '+') { $phone='+'.$phone; }
 $text = init('text');
 $eqLogic = eqLogic::byLogicalId($phone, 'gammu');
 if (!is_object($eqLogic)) {

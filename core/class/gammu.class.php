@@ -57,12 +57,7 @@ class gammu extends eqLogic {
   }
 
   public static function configuration() {
-    if (config::byKey('pin', 'gammu') == '' || config::byKey('nodeGateway', 'gammu') == '') {
-    	log::add('gammu', 'error', 'Configuration plugin non remplie, impossible de configurer gammu');
-    	die();
-    } else {
-    	log::add('gammu', 'debug', 'Configuration gammu');
-    }
+    log::add('gammu', 'debug', 'Configuration gammu');
     $install_path = dirname(__FILE__) . '/../../resources';
     if (!config::byKey('internalPort')) {
       $url = 'http://127.0.0.1' . config::byKey('internalComplement') . '/plugins/gammu/core/api/jeeGammu.php?apikey=' . config::byKey('api');
@@ -76,9 +71,7 @@ class gammu extends eqLogic {
 
     $i = 1;
     foreach (eqLogic::byType('gammu', true) as $gammu) {
-      $phone = $gammu->getConfiguration('phone');
-      if ($phone != '+') { $phone='+'.$phone; }
-      $line = 'number' . $i . ' = ' . $phone;
+      $line = 'number' . $i . ' = ' . $gammu->getConfiguration('phone');
       $cmd = 'echo "' . $line . '" | sudo tee --append /etc/gammu-smsdrc';
       exec($cmd);
       $i++;
@@ -148,13 +141,13 @@ class gammuCmd extends cmd {
       break;
 
       case 'action' :
-      	putenv ( ' LANG=fr_FR.UTF-8 ' );
+      putenv('LANG=fr_FR.UTF-8');
       $reply = $_options['message'];
       $len=strlen($reply);
       $reply = str_replace('/n',PHP_EOL, $reply);
       $reply = '"'.$reply.'"';
-      if ($phone != '+') { $phone='+'.$phone; }
-      $cmd='sudo gammu-smsd-inject TEXT ' . $phone . ' -unicode -len ' .$len. " -text ".$reply;
+      if ($phone[0] != '+') { $phone='+'.$phone; }
+      $cmd='sudo gammu-smsd-inject TEXT ' . $phone . ' -unicode -len ' .$len. ' -text '.$reply;
       log::add('gammu', 'debug', 'SMS send : ' . $cmd);
       exec($cmd);
       break;

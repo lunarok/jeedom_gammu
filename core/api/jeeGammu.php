@@ -27,7 +27,6 @@ if (init('apikey') != config::byKey('api') || config::byKey('api') == '') {
 
 
 $phone = init('phone');
-if ($phone[0] != '+') { $phone='+'.$phone; }
 $text = init('text');
 $eqLogic = eqLogic::byLogicalId($phone, 'gammu');
 if (!is_object($eqLogic)) {
@@ -66,11 +65,12 @@ $cmd_text->setConfiguration('value',$text);
 $cmd_text->save();
 
 if ($eqLogic->getConfiguration('interact') == 1) {
-	putenv ( ' LANG=fr_FR.UTF-8 ' );
- 	$reply = interactQuery::tryToReply($text, $parameters);
+	$reply = interactQuery::tryToReply($text, $parameters);
+	putenv('LANG=fr_FR.UTF-8');
 	$len=strlen($reply);
 	$reply = str_replace('/n',PHP_EOL, $reply);
 	$reply = '"'.$reply.'"';
+        if ($phone[0] != '+') { $phone='+'.$phone; }
 	$cmd='sudo gammu-smsd-inject TEXT ' . $phone . ' -unicode -len ' .$len. ' -text '.$reply;
   	log::add('gammu', 'debug', 'SMS send : ' . $cmd);
   	exec($cmd);

@@ -118,4 +118,8 @@ escaped="$1"
 
 sed -i -e 's/#DIR#/'${escaped}'/g' /var/spool/gammu/SMSDreceive.sh
 
-service gammu-smsd restart
+service gammu-smsd stop
+
+sleep 5
+
+service gammu-smsd start

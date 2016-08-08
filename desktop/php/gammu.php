@@ -58,22 +58,30 @@ $eqLogics = eqLogic::byType('gammu');
             </div>
     </div>
 
+<div class="col-lg-10 col-md-9 col-sm-8 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
 
-    <div class="col-lg-10 col-md-9 col-sm-8 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
-      <div class="row">
-          <div class="col-sm-6">
+    <a class="btn btn-success eqLogicAction pull-right" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
+    <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> {{Equipement}}</a></li>
+      <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
+    </ul>
+
+    <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+<div role="tabpanel" class="tab-pane active" id="eqlogictab">
     <form class="form-horizontal">
       <fieldset>
         <legend><i class="fa fa-arrow-circle-left eqLogicAction cursor" data-action="returnToThumbnailDisplay"></i> {{Général}}  <i class='fa fa-cogs eqLogicAction pull-right cursor expertModeVisible' data-action='configure'></i></legend>
         <div class="form-group">
-          <label class="col-sm-2 control-label">{{Nom de l'équipement Gammu}}</label>
+          <label class="col-sm-3 control-label">{{Nom de l'équipement Gammu}}</label>
           <div class="col-sm-3">
             <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
             <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement gammu}}"/>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" >Objet parent</label>
+          <label class="col-sm-3 control-label" >Objet parent</label>
           <div class="col-sm-3">
               <select class="eqLogicAttr form-control" data-l1key="object_id">
                    <option value="">Aucun</option>
@@ -86,59 +94,51 @@ $eqLogics = eqLogic::byType('gammu');
           </div>
        </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" >{{Activer}}</label>
-          <div class="col-sm-9">
-           <input type="checkbox" class="eqLogicAttr bootstrapSwitch" data-label-text="{{Activer}}" data-l1key="isEnable" checked/>
-           <input type="checkbox" class="eqLogicAttr bootstrapSwitch" data-label-text="{{Visible}}" data-l1key="isVisible" checked/>
-         </div>
-       </div>
+              <label class="col-sm-3 control-label">{{Catégorie}}</label>
+              <div class="col-sm-8">
+                <?php
+                foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
+                  echo '<label class="checkbox-inline">';
+                  echo '<input type="checkbox" class="eqLogicAttr" data-l1key="category" data-l2key="' . $key . '" />' . $value['name'];
+                  echo '</label>';
+                }
+                ?>
 
-    </fieldset>
-  </form>
-  </div>
-
-  <form class="form-horizontal">
-    <fieldset>
-        <legend>{{Configuration}}</legend>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" ></label>
+              <div class="col-sm-8">
+                <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
+                <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
+              </div>
+</div>
 
         <div class="form-group">
-        <label class="col-sm-2 control-label">{{Téléphone}} :</label>
+        <label class="col-sm-3 control-label">{{Téléphone}} :</label>
          <div class="col-sm-3">
            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="phone" placeholder="{{numéro}}"/>
          </div>
        </div>
 
        <div class="form-group">
-       <label class="col-sm-2 control-label">{{Utilisateur}} :</label>
+       <label class="col-sm-3 control-label">{{Utilisateur}} :</label>
         <div class="col-sm-3">
           <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="user" placeholder="{{username}}"/>
         </div>
       </div>
 
       <div class="form-group">
-      <label class="col-sm-2 control-label">{{Interactions}} :</label>
+      <label class="col-sm-3 control-label">{{Interactions}} :</label>
       <div class="col-sm-3">
         <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="interact">
           <option value="0">{{Non}}</option>
           <option value="1">{{Oui}}</option>
         </select>
         </div>
-      </div>
-
-    </fieldset>
-  </form>
-  </div>
-
-  <legend>{{Commandes}}</legend>
+       <div role="tabpanel" class="tab-pane" id="commandtab">
   <form class="form-horizontal">
-            <fieldset>
-                <div class="form-actions">
-                    <a class="btn btn-danger eqLogicAction" data-action="remove"><i class="fa fa-minus-circle"></i> Supprimer</a>
-                    <a class="btn btn-success eqLogicAction" data-action="save"><i class="fa fa-check-circle"></i> Sauvegarder</a>
-                </div>
-            </fieldset>
-        </form>
-<br>
+
   <table id="table_cmd" class="table table-bordered table-condensed">
     <thead>
       <tr>
@@ -149,17 +149,10 @@ $eqLogics = eqLogic::byType('gammu');
     </tbody>
   </table>
 
-  <form class="form-horizontal">
-    <fieldset>
-      <div class="form-actions">
-        <a class="btn btn-danger eqLogicAction" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
-        <a class="btn btn-success eqLogicAction" data-action="save"><i class="fa fa-check-circle"></i> {{Sauvegarder}}</a>
-      </div>
-    </fieldset>
-  </form>
-
-  </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
 
 <?php include_file('desktop', 'gammu', 'js', 'gammu'); ?>
 <?php include_file('core', 'plugin.template', 'js'); ?>

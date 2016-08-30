@@ -1,0 +1,9 @@
+{
+	"id" : "gammu",
+	"name" : "Gammu",
+	"licence" : "AGPL",
+	"author" : "lunarok",
+	"require" : "2.4",
+	"category" : "communication",
+  "hasDependency" : 1
+}

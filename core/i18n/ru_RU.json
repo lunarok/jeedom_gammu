@@ -1,0 +1,12 @@
+{
+    "plugins/gammu/plugin_info/configuration.php": {
+        "Clef USB": "Clef USB",
+        "Aucun": "Aucun",
+        "PIN : ": "PIN :"
+    },
+    "plugins/gammu/core/class/gammu.class.php": {
+        "Gammu": "Gammu",
+        "NOK": "NOK",
+        "Indique si le service gammu est démarré": "Indique si le service gammu est démarré"
+    }
+}

@@ -1,0 +1,15 @@
+==== Configuration du plugin
+
+Le plugin nécessite de choisir la clef USB sur la page de configuration
+
+==== Configuration d'un équipement
+
+Chaque équipement correspond à un numéro de téléphone avec lequel on souhaite communiquer
+
+Les paramètres sont :
+
+  - le numéro tel qu'il apparait sur les SMS (+336....)
+
+  - si on veut utiliser les interactions avec ce numéro
+
+  - si l'on souhaite lier le téléphone à un utilisateur de Jeedom

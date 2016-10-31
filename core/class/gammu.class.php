@@ -64,11 +64,8 @@ class gammu extends eqLogic {
 	log::add('gammu', 'debug', 'Configuration gammu');
 	}
     $install_path = dirname(__FILE__) . '/../../resources';
-    if (!config::byKey('internalPort')) {
-      $url = 'http://127.0.0.1' . config::byKey('internalComplement') . '/plugins/gammu/core/api/jeeGammu.php?apikey=' . config::byKey('api');
-    } else {
-      $url = 'http://127.0.0.1:' . config::byKey('internalPort') . config::byKey('internalComplement') . '/plugins/gammu/core/api/jeeGammu.php?apikey=' . config::byKey('api');
-    }
+    $url = network::getNetworkAccess('internal') . '/plugins/gammu/core/api/jeeGammu.php?apikey=' . jeedom::getApiKey('gammu');
+
     $usbGateway = jeedom::getUsbMapping(config::byKey('nodeGateway', 'gammu'));
     $cmd = 'sudo /bin/bash ' . $install_path . '/install.sh ' . $install_path . ' ' . $usbGateway . ' ' . config::byKey('pin', 'gammu') . ' ' . $url;
     exec($cmd);

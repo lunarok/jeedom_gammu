@@ -18,13 +18,13 @@
         "Configuration": "Configuration",
         "Mes Gammu": "Mes Gammu",
         "Sauvegarder": "Sauvegarder",
-        "Supprimer": "Supprimer",
+        "Supprimer": "Delete",
         "Configuration avancée": "Configuration avancée",
         "Equipement": "Equipement",
         "Commandes": "Commandes",
         "Nom de l'équipement Gammu": "Nom de l'équipement Gammu",
         "Nom de l'équipement gammu": "Nom de l'équipement gammu",
-        "Catégorie": "Catégorie",
+        "Catégorie": "Category",
         "Activer": "Activer",
         "Visible": "Visible",
         "Téléphone": "Téléphone",
@@ -32,14 +32,14 @@
         "Utilisateur": "Utilisateur",
         "username": "username",
         "Interactions": "Interactions",
-        "Non": "Non",
-        "Oui": "Oui",
-        "Nom": "Nom",
-        "Valeur": "Valeur",
+        "Non": "No",
+        "Oui": "Yes",
+        "Nom": "Name",
+        "Valeur": "Value",
         "Options": "Options"
     },
     "plugins/gammu/desktop/js/gammu.js": {
-        "Nom": "Nom",
+        "Nom": "Name",
         "Tester": "Tester"
     }
 }

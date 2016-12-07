@@ -1,4 +1,4 @@
-==== Configuration du plugin
+==== The plugin configuration
 
 Le plugin nécessite de choisir la clef USB sur la page de configuration
 

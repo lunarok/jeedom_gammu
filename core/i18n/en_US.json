@@ -9,21 +9,21 @@
         "NOK": "NOK",
         "Indique si le service gammu est démarré": "Show if gammu service is on",
         "Message": "Message",
-        "Envoi": "Envoi"
+        "Envoi": "Send"
     },
     "plugins/gammu/desktop/php/gammu.php": {
-        "Ajouter un équipement": "Ajouter un équipement",
-        "Rechercher": "Rechercher",
-        "Gestion": "Gestion",
-        "Configuration": "Configuration",
-        "Mes Gammu": "Mes Gammu",
-        "Sauvegarder": "Sauvegarder",
+        "Ajouter un équipement": "Add equipment",
+        "Rechercher": "Search",
+        "Gestion": "Management",
+        "Configuration": "Setting",
+        "Mes Gammu": "My Gammu",
+        "Sauvegarder": "Save",
         "Supprimer": "Delete",
-        "Configuration avancée": "Configuration avancée",
-        "Equipement": "Equipement",
-        "Commandes": "Commandes",
-        "Nom de l'équipement Gammu": "Nom de l'équipement Gammu",
-        "Nom de l'équipement gammu": "Nom de l'équipement gammu",
+        "Configuration avancée": "Advanced setup",
+        "Equipement": "Equipment",
+        "Commandes": "Commands",
+        "Nom de l'équipement Gammu": "Name of the equipment Gammu",
+        "Nom de l'équipement gammu": "Name of the equipment Gammu",
         "Catégorie": "Category",
         "Activer": "Activer",
         "Visible": "Visible",
@@ -40,6 +40,6 @@
     },
     "plugins/gammu/desktop/js/gammu.js": {
         "Nom": "Name",
-        "Tester": "Tester"
+        "Tester": "Test"
     }
 }

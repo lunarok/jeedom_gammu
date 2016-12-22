@@ -1,6 +1,6 @@
 ==== Gammu SMS
 
-Ce plugin permet d'utiliser Gammu pour envoyer et recevoir des SMS
+This plugin allows you to use Gammu to send and receive SMS
 
 Vous devriez d'abord vérifier si votre clef est reconnu par le plugin officiel avant d'utiliser celui-ci
 

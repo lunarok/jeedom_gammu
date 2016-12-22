@@ -1,5 +1,5 @@
 [panel,danger]
-.Je n'ai pas de retour de SMS
+. I don't have a return of SMS
 --
 Il faut bien avoir configurer le numéro pour autoriser les interactions
 --

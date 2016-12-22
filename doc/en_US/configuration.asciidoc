@@ -1,6 +1,6 @@
 ==== The plugin configuration
 
-Le plugin nécessite de choisir la clef USB sur la page de configuration
+The plugin requires to choose the USB key on the configuration page
 
 ==== Equipment Configuration 
 

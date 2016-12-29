@@ -2,6 +2,6 @@
 
 This plugin allows you to use Gammu to send and receive SMS
 
-Vous devriez d'abord vérifier si votre clef est reconnu par le plugin officiel avant d'utiliser celui-ci
+You should first check if your key is recognized by the official plugin before using it
 
 Si la clef ne fonctionne pas avec le plugin officiel, et qu'elle est supportée par Gammu, alors ce plugin devrait fonctionner

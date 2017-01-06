@@ -1,8 +1,8 @@
-==== Configuration du plugin
+==== Plugin Konfiguration
 
 Le plugin nécessite de choisir la clef USB sur la page de configuration
 
-==== Configuration d'un équipement
+==== Konfiguration von Geräten
 
 Chaque équipement correspond à un numéro de téléphone avec lequel on souhaite communiquer
 

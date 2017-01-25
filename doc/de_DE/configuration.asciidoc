@@ -6,7 +6,7 @@ Le plugin nécessite de choisir la clef USB sur la page de configuration
 
 Chaque équipement correspond à un numéro de téléphone avec lequel on souhaite communiquer
 
-Les paramètres sont :
+Die Parameter sind :
 
   - le numéro tel qu'il apparait sur les SMS (+336....)
 

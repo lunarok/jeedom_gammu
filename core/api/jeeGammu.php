@@ -70,7 +70,7 @@ if ($eqLogic->getConfiguration('interact') == 1) {
 	$reply = str_replace('/n',PHP_EOL, $reply);
 	$reply = '"'.$reply.'"';
         if ($phone[0] != '+') { $phone='+'.$phone; }
-	$cmd='sudo gammu-smsd-inject TEXT ' . $phone . ' -unicode -len ' .$len. ' -text '.$reply['text'];
+	$cmd='sudo gammu-smsd-inject TEXT ' . $phone . ' -unicode -len ' .$len. ' -text '.$reply['reply'];
   	log::add('gammu', 'debug', 'SMS send : ' . $cmd);
   	exec($cmd);
 }

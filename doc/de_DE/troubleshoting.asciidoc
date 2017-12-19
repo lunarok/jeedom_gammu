@@ -1,5 +1,5 @@
 [panel,danger]
-.Je n'ai pas de retour de SMS
+.Ich bekomme keine SMS zurück
 --
 Il faut bien avoir configurer le numéro pour autoriser les interactions
 --

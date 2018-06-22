@@ -1,10 +1,13 @@
 {
 	"id" : "gammu",
 	"name" : "Gammu",
+	"description" : "Plugin permettant d'utiliser Gammu pour envoyer des SMS. Si votre clef 3G fonctionne avec le plugin officiel, il est préférable d'utiliser l'officiel. Ce plugin vient proposer une solution pour ceux qui auraient une clef déjà en leur possession et supportée uniquement par Gammu",
 	"licence" : "AGPL",
 	"author" : "lunarok",
 	"require" : "3.0",
 	"category" : "communication",
+	"language" : ["fr_FR","en_US"],
+	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
   	"hasDependency" : 1,
     "changelog" : "https://lunarok.github.io/jeedom_docs/plugins/gammu/changelog.html",
     "documentation" : "https://lunarok.github.io/jeedom_docs/plugins/gammu/"

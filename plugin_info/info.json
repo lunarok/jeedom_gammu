@@ -7,7 +7,7 @@
 	"require" : "3.0",
 	"category" : "communication",
 	"language" : ["fr_FR","en_US"],
-	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
+	"compatibility" : ["miniplus","rpi","docker","diy","mobile"],
   	"hasDependency" : 1,
     "changelog" : "https://lunarok.github.io/jeedom_docs/plugins/gammu/changelog.html",
     "documentation" : "https://lunarok.github.io/jeedom_docs/plugins/gammu/"

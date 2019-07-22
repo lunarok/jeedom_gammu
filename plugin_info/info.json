@@ -4,7 +4,7 @@
 	"description" : "Plugin permettant d'utiliser Gammu pour envoyer des SMS. Si votre clef 3G fonctionne avec le plugin officiel, il est préférable d'utiliser l'officiel. Ce plugin vient proposer une solution pour ceux qui auraient une clef déjà en leur possession et supportée uniquement par Gammu",
 	"licence" : "AGPL",
 	"author" : "lunarok",
-	"require" : "3.0",
+	"require" : "3.3.24",
 	"category" : "communication",
 	"language" : ["fr_FR","en_US"],
 	"compatibility" : ["miniplus","rpi","docker","diy","mobile"],

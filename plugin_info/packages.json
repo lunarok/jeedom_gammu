@@ -1,0 +1,7 @@
+{
+    "apt" : {
+      "python-gammu" : {},
+      "gammu" : {},
+      "gammu-smsd" : {}
+    }
+  }

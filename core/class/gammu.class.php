@@ -38,24 +38,6 @@ class gammu extends eqLogic {
     return $return;
   }
 
-  public static function dependancy_info() {
-    $return = array();
-    $return['log'] = 'gammu_dep';
-    $cmd = "dpkg -l | grep gammu";
-    exec($cmd, $output, $return_var);
-    if ($output[0] != "") {
-      $return['state'] = 'ok';
-    } else {
-      $return['state'] = 'nok';
-    }
-    return $return;
-  }
-
-  public static function dependancy_install() {
-    $cmd = 'sudo apt-get -y install gammu gammu-smsd python-gammu >> ' . log::getPathToLog('gammu_dep') . ' 2>&1 &';
-    exec($cmd);
-  }
-
   public static function configuration() {
 	if (config::byKey('pin', 'gammu') == '' || config::byKey('nodeGateway', 'gammu') == '') {
 	    log::add('gammu', 'error', 'Configuration plugin non remplie, impossible de configurer gammu');
